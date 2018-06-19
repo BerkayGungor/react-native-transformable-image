@@ -32,7 +32,7 @@ export default class TransformableImage extends Component {
 		enableTransform: true,
 		enableScale: true,
 		enableTranslate: true,
-		indicatorColor: '29B673'
+		indicatorColor: '#29B673'
 	};
 
 	constructor(props) {
@@ -87,30 +87,30 @@ export default class TransformableImage extends Component {
 
 
 		return (
-		<ViewTransformer
-			ref='viewTransformer'
-			key={'viewTransformer#' + this.state.keyAccumulator} //when image source changes, we should use a different node to avoid reusing previous transform state
-			enableTransform={this.props.enableTransform && this.state.imageLoaded} //disable transform until image is loaded
-			enableScale={this.props.enableScale}
-			enableTranslate={this.props.enableTranslate}
-			enableResistance={true}
-			onTransformGestureReleased={this.props.onTransformGestureReleased}
-			onViewTransformed={this.props.onViewTransformed}
-			onSingleTapConfirmed={this.props.onSingleTapConfirmed}
-			maxScale={maxScale}
-			contentAspectRatio={contentAspectRatio}
-			onLayout={this.onLayout.bind(this)}
-			style={this.props.style}>
-			<Image
-			{...this.props}
-			style={[this.props.style, {backgroundColor: 'transparent'}]}
-			resizeMode={'contain'}
-			onLoadStart={this.onLoadStart.bind(this)}
-			onLoad={this.onLoad.bind(this)}
-			capInsets={{left: 0.1, top: 0.1, right: 0.1, bottom: 0.1}} //on iOS, use capInsets to avoid image downsampling
-			/>
-			{ this.state.imageLoaded ? null : <ActivityIndicator style={{ position: 'absolute', alignSelf: 'center' }} color={this.props.indicatorColor} />}
-		</ViewTransformer>
+			<ViewTransformer
+				ref='viewTransformer'
+				key={'viewTransformer#' + this.state.keyAccumulator} //when image source changes, we should use a different node to avoid reusing previous transform state
+				enableTransform={this.props.enableTransform && this.state.imageLoaded} //disable transform until image is loaded
+				enableScale={this.props.enableScale}
+				enableTranslate={this.props.enableTranslate}
+				enableResistance={true}
+				onTransformGestureReleased={this.props.onTransformGestureReleased}
+				onViewTransformed={this.props.onViewTransformed}
+				onSingleTapConfirmed={this.props.onSingleTapConfirmed}
+				maxScale={maxScale}
+				contentAspectRatio={contentAspectRatio}
+				onLayout={this.onLayout.bind(this)}
+				style={this.props.style}>
+				<Image
+				{...this.props}
+				style={[this.props.style, {backgroundColor: 'transparent'}]}
+				resizeMode={'contain'}
+				onLoadStart={this.onLoadStart.bind(this)}
+				onLoad={this.onLoad.bind(this)}
+				capInsets={{left: 0.1, top: 0.1, right: 0.1, bottom: 0.1}} //on iOS, use capInsets to avoid image downsampling
+				/>
+				{ this.state.imageLoaded ? null : <ActivityIndicator style={{ position: 'absolute', alignSelf: 'center' }} color={this.props.indicatorColor} />}
+			</ViewTransformer>
 		);
 	}
 

@@ -10,7 +10,7 @@ Written in pure JS, this component should be one of the most easy to use compone
 
 ## Install
 
- `npm install --save shoutem/react-native-transformable-image`
+ `npm install --save BerkayGungor/react-native-transformable-image`
 
 
 
@@ -41,6 +41,12 @@ You can provide `enableTransform`, `enableScale` and `enableTranslate`  props to
 * `onTransformGestureReleased` and `onViewTransformed`:
 
 ​	inherited from [react-native-view-transformer](https://github.com/shoutem/react-native-view-transformer)
+
+#### Style props
+
+* `indicatorColor` :
+
+This prop is optional however it can be used to change ActivityIndicator's color. Default color is #29B673
 
 ### Attention
 
