@@ -109,7 +109,7 @@ export default class TransformableImage extends Component {
 				onLoad={this.onLoad.bind(this)}
 				capInsets={{left: 0.1, top: 0.1, right: 0.1, bottom: 0.1}} //on iOS, use capInsets to avoid image downsampling
 				/>
-				{ this.state.imageLoaded ? null : <ActivityIndicator style={{ position: 'absolute', alignSelf: 'center' }} color={this.props.indicatorColor} />}
+				{ this.state.imageLoaded ? null : <ActivityIndicator style={{ top: '50%', position: 'absolute', alignSelf: 'center' }} size="large" color={this.props.indicatorColor} />}
 			</ViewTransformer>
 		);
 	}
